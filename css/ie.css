@@ -1,10 +1,10 @@
-body,
+/* body,
 .button-1,
 .button-2,
 .auth-input-field,
 .auth-submit-button {
     font-family: "Rmont", sans-serif;
-}
+} */
 
 .clearfix {
     height: 0;
@@ -46,9 +46,15 @@ body,
     margin-top: -1px;
 }
 .user-account .block-footer {
-    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B200151C,endColorstr=#B200151C); */
     background: rgba(0, 21, 28, 0.7);
     border-radius: 5px;
+}
+
+.user-account {
+    margin-bottom: -5px;
+}
+.user-account.height100 {
+    margin-bottom: 0;
 }
 .user-account.height100 .block-body {
     margin-top: 0;

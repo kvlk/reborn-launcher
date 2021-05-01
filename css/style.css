@@ -239,7 +239,8 @@ ul {
 .row {
     position: relative; 
     display: inline-block; 
-    width: 100%; 
+    width: 100%;
+    min-height: 305px;
     vertical-align: top;
 }
 .row > .block {

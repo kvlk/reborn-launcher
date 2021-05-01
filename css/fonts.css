@@ -2,17 +2,23 @@
     font-family: "Rmont";
     font-weight: 400;
     src: url("../fonts/Rmont-Regular.eot");
-    src: url("../fonts/Rmont-Regular.eot?#iefix") format('embedded-opentype');
+    src: url("../fonts/Rmont-Regular.eot?#iefix") format('embedded-opentype'),
+         url("../fonts/Montserrat-Regular.woff2") format('woff2'),
+         url("../fonts/Montserrat-Regular.woff") format('woff');
 }
 @font-face {
     font-family: "Rmont";
     font-weight: 600;
-    src: url("../fonts/Rmont-Semibold.eot");
-    src: url("../fonts/Rmont-Semibold.eot?#iefix") format('embedded-opentype');
+    src: url("../fonts/Rmont-SemiBold.eot");
+    src: url("../fonts/Rmont-SemiBold.eot?#iefix") format('embedded-opentype'),
+         url("../fonts/Montserrat-SemiBold.woff2") format('woff2'),
+         url("../fonts/Montserrat-SemiBold.woff") format('woff');
 }
 @font-face {
     font-family: "Rmont";
     font-weight: 700;
     src: url("../fonts/Rmont-Bold.eot");
-    src: url("../fonts/Rmont-Bold.eot?#iefix") format('embedded-opentype');
+    src: url("../fonts/Rmont-Bold.eot?#iefix") format('embedded-opentype'),
+         url("../fonts/Montserrat-Bold.woff2") format('woff2'),
+         url("../fonts/Montserrat-Bold.woff") format('woff');
 }

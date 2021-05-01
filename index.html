@@ -248,8 +248,6 @@ $(".language > a").on("click", function(e) {
     $(".language-dropdown a").on("click", function(e) {
         e.preventDefault();
         var $languageSelectedHtml = $(this).html();
-        console.log("li: " + $languageActiveHtml);
-        console.log("ul a: " + $languageSelectedHtml);
         closeDropDown();
         $("#language-selected").html($languageSelectedHtml);
         $(this).html($languageActiveHtml);
@@ -279,7 +277,7 @@ $(".news .block-header").on("click", function(e) {
     if (!$(this).closest(".block").hasClass("collapsed")) {
         $(this).closest(".block").find(".block-body").slideDown(300, function() {
             var userAccountHeight = $(".user-account").outerHeight();
-            if (window.document.documentMode && window.document.documentMode <= 7) {
+            if (isIE7) {
                 userAccountHeight -= 7;
             }
 
