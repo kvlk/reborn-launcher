@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reborn</title>
     <meta http-equiv="Cache-Control" content="no-cache">	
     <meta http-equiv="Pragma" content="no-cache">
     <link rel="stylesheet" href="https://use.typekit.net/ppk3qnf.css">
@@ -200,7 +200,6 @@
 
 <script>
 var isIE7 = window.document.documentMode && window.document.documentMode <= 7 || false;
-console.log("IE7 mode: " + isIE7);
 
 if (isIE7) {
     $(".checkbox").on("click", function() {
@@ -235,7 +234,6 @@ $(".language > a").on("click", function(e) {
     e.preventDefault();
 
     if (isIE7) {
-        // console.log($(".user-account").outerHeight());
         if ($(".user-account").is(":visible")) {
             $(".user-account").css("height", $(".user-account").outerHeight() + "px");
         }
@@ -257,7 +255,6 @@ $(".language > a").on("click", function(e) {
 
     $(document).on("click", function(e) {
         if (!$(e.target).closest(".language").length) {
-            //$(".language-dropdown").slideUp("fast");
             closeDropDown();            
         }
     });
@@ -266,7 +263,6 @@ $(".language > a").on("click", function(e) {
         $(".language-dropdown").slideUp("fast");
         if (isIE7) {
             $(".main, .main-inner > .row").css("position", "relative");
-            // console.log("close dropdown: " + $(".user-account").outerHeight());
         }
         $(document).off("click");
         $(".language-dropdown a").off("click");
@@ -277,15 +273,12 @@ $(".news .block-header").on("click", function(e) {
     e.preventDefault();
     $(this).find(".icon-arrow").toggleClass("icon-arrow-right icon-arrow-down");
     $(this).closest(".block").toggleClass("collapsed");
-    //console.log($(".user-account").outerHeight());
-    //console.log("news " + $(".news").outerHeight());
 
     if (!$(this).closest(".block").hasClass("collapsed")) {
         $(this).closest(".block").find(".block-body").slideDown(300, function() {
             var userAccountHeight = $(".user-account").outerHeight();
             if (window.document.documentMode && window.document.documentMode <= 7) {
                 userAccountHeight -= 7;
-                // console.log(userAccountHeight);
             }
 
             if (userAccountHeight < $(".news").outerHeight()) {
@@ -298,14 +291,6 @@ $(".news .block-header").on("click", function(e) {
         $(this).closest(".block").find(".block-body").slideUp(300);
         $(".user-account").removeClass("height100");
     }
-
-    // $(this).closest(".block").find(".block-body").slideToggle(300, function() {
-    //     if ($(".user-account").outerHeight() < $(".news").outerHeight() && !$(this).closest(".block").hasClass("collapsed")) {
-    //         $(".user-account").addClass("height100");
-    //     } else {
-    //         $(".user-account").removeClass("height100");
-    //     }
-    // });
 });
 
 $("#settings").on("click", function() {

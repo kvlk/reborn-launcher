@@ -1,99 +1,3 @@
-/* body,
-.button-1,
-.button-2,
-.auth-input-field,
-.auth-submit-button {
-    font-family: "Rmont", sans-serif;
-} */
-/* input::-ms-clear,
-input::-ms-reveal {
-    display: none;
-} */
-
-.header {
-    height: auto;
-}
-/* .status {
-    margin-bottom: 2px;
-} */
-.main-inner > .row {
-    min-height: 290px;
-}
-/* .button-1:hover,
-.button-1:focus,
-.button-2:hover,
-.button-2:focus,
-.auth-submit-button:hover,
-.auth-submit-button:focus {
-    filter: alpha(opacity=80);
-} */
-
-.language-dropdown {
-    /* top: 10px; */
-    padding-top: 40px;
-    /* background: url("../images/bg-block.png"); */
-}
-.language > a,
-.language-dropdown a {
-    display: inline-block;
-    cursor: pointer;
-}
-.language-selected {
-    float: left;
-}
-/* .language .icon-flag {
-    margin-right: 10px;
-} */
-
-.account-list li.even {
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2003648,endColorstr=#B2003648);
-    /* background: rgba(0, 54, 72, 0.7); */
-}
-.user-account .block-header {
-    /* padding: 30px 40px 30px; */
-    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B200151C,endColorstr=#B200151C); */
-
-    /* background: #00151C;
-    filter: alpha(opacity=70);*/
-
-    /* background: rgba(0, 21, 28, 0.7); */
-}
-.user-account .block-header .block-inner-top {
-    margin-top: -20px;
-}
-
-.user-account .block-body {
-    margin-top: -1px;
-}
-.user-account.height100 .block-body {
-    margin-top: 0;
-}
-.user-account .block-footer {
-    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B200151C,endColorstr=#B200151C); */
-    background: rgba(0, 21, 28, 0.7);
-    border-radius: 5px;
-}
-
-.status-yellow {
-    color: #fff500;
-    filter: alpha(opacity=80);
-}
-.status-bar.status-yellow {
-    filter: none;
-}
-/*.block {
-    behavior: url("../js/PIE.htc");
-} */
-
-.news-list li {
-    filter: alpha(opacity=70);
-}
-
-.progress-bar-fill {
-    background: url("../images/progressbar.png");
-    /* filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#CC060C0D,endColorstr=#CC14EDFA); */
-}
-
 .clearfix {
     height: 0;
     overflow: hidden;
@@ -104,14 +8,62 @@ input::-ms-reveal {
     *zoom: 1;
 }
 
+.header {
+    height: auto;
+}
+.main-inner > .row {
+    min-height: 290px;
+}
 
+.language-dropdown {
+    padding-top: 40px;
+}
+.language > a,
+.language-dropdown a {
+    display: inline-block;
+    cursor: pointer;
+}
+.language-selected {
+    float: left;
+}
 
+.account-list li.even {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2003648,endColorstr=#B2003648);
+}
 
-
-
-.user-account.height100 > .block-inner-bottom {
-    bottom: 3px;
+.user-account .block-header .block-inner-top {
+    margin-top: -20px;
+}
+.user-account .block-body {
+    margin-top: -1px;
+}
+.user-account .block-footer {
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B200151C,endColorstr=#B200151C); */
+    background: rgba(0, 21, 28, 0.7);
+    border-radius: 5px;
+}
+.user-account.height100 .block-body {
+    margin-top: 0;
 }
 .user-account.height100 .block-footer {
     bottom: -3px;
+}
+.user-account.height100 > .block-inner-bottom {
+    bottom: 3px;
+}
+
+.status-yellow {
+    color: #fff500;
+    filter: alpha(opacity=80);
+}
+.status-bar.status-yellow {
+    filter: none;
+}
+
+.news-list li {
+    filter: alpha(opacity=70);
+}
+
+.progress-bar-fill {
+    background: url("../images/progressbar.png");
 }
