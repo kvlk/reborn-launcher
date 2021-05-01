@@ -35,7 +35,12 @@
     float: left;
 }
 
-.account-list li.even {
+.account-list li {
+    position: relative;
+    float: left;
+}
+.account-list li.active,
+.account-list li:hover {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2003648,endColorstr=#B2003648);
 }
 
@@ -60,10 +65,17 @@
     margin-top: 0;
 }
 .user-account.height100 .block-footer {
-    bottom: -3px;
+    bottom: 0;
+}
+.user-account.height100 > .block-inner-content {
+    bottom: 10px;
 }
 .user-account.height100 > .block-inner-bottom {
-    bottom: 3px;
+    bottom: 5px;
+}
+.user-account.height100 > .block-inner-bottom.active,
+.user-account.height100 > .active .block-inner-bottom {
+    background: url("../images/bg-highlight.png");
 }
 
 .status-yellow {
@@ -74,10 +86,16 @@
     filter: none;
 }
 
-.news-list li {
-    padding-top: 19px;
-    line-height: 18px;
-    filter: alpha(opacity=70);
+.news .block-header .button {
+    margin-top: -4px;
+}
+
+.news-list a {
+    color: #B3B3B3;
+}
+
+.news-time {
+    color: #B31A1A;
 }
 
 .progress-bar-fill {

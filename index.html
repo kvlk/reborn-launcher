@@ -38,7 +38,7 @@
         </div>
         <div class="header-menu">
             <ul>
-                <li class="account active"><a href="#"><span class="icon icon-user-active"></span> Account <span class="icon icon-arrow icon-arrow-right"></span></a></li>
+                <li class="account"><a href="#"><span class="icon icon-user"></span> Account <span class="icon icon-arrow icon-arrow-right"></span></a></li>
                 <li><a href="#">Support</a></li>
                 <li><a href="#">Knowledge Base</a></li>
                 <li><a href="#">Website</a></li>
@@ -64,40 +64,52 @@
         <div class="block news">
             <div class="block-header">
                 <span class="title">News</span>
-                <button type="button" class="button" id="news-list-button"><span class="icon icon-arrow icon-arrow-right"></span></button>
+                <button type="button" class="button" id="news-list-button"><span class="icon icon-arrow icon-arrow-down"></span></button>
             </div>
             <div class="block-body">
                 <ul class="block-list news-list">
                     <li>
-                        <span class="news-message">Update 4.3 is already in the game!</span>
-                        <span class="news-date">04.12.2021</span>
+                        <a href="#">
+                            <span class="news-message">Update 4.3 is already in the game!</span>
+                            <span class="news-date">04.12.2021</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="news-message">Update 4.2 is already in the game!</span>
-                        <span class="news-date">04.12.2021</span>
+                        <a href="#">
+                            <span class="news-message">Update 4.2 is already in the game!</span>
+                            <span class="news-date">04.12.2021</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="news-message">Game event</span>
-                        <span class="news-date"><span class="news-time">3d. 12h. 12m. 23s.</span> 04.12.2021</span>
+                        <a href="#">
+                            <span class="news-message">Game event</span>
+                            <span class="news-date"><span class="news-time">3d. 12h. 12m. 23s.</span> 04.12.2021</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="news-message">Update 4.1 is already in the game!</span>
-                        <span class="news-date">04.12.2021</span>
+                        <a href="#">
+                            <span class="news-message">Update 4.1 is already in the game!</span>
+                            <span class="news-date">04.12.2021</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="news-message">Update 4.0 is already in the game!</span>
-                        <span class="news-date">04.12.2021</span>
+                        <a href="#">
+                            <span class="news-message">Update 4.0 is already in the game!</span>
+                            <span class="news-date">04.12.2021</span>
+                        </a>
                     </li>
                     <li>
-                        <span class="news-message">Game event</span>
-                        <span class="news-date"><span class="news-time">18h. 12m. 23s.</span> 04.12.2021</span>
+                        <a href="#">
+                            <span class="news-message">Game event</span>
+                            <span class="news-date"><span class="news-time">18h. 12m. 23s.</span> 04.12.2021</span>
+                        </a>
                     </li>
                 </ul>
             </div>
             <div class="block-footer"></div>
         </div>
 
-        <div class="block user-account" style="display: none;">
+        <div class="block user-account height100" style="display: none;">
             <div class="block-inner-top"></div>
             <div class="block-inner-content">
             <div class="block-header">
@@ -105,17 +117,16 @@
                 <div class="block-inner-content">
                     <span class="title"><span class="icon icon-user-md"></span> Takeshi532</span>
                 </div>
-                <div class="block-inner-bottom"></div>
             </div>
             <div class="block-body">
                 <ul class="block-list account-list">
                     <li>
                         <span class="account-name"><span class="icon icon-username"></span> LOGINNAME1234721</span>
                         <span class="account-checkbox">
-                            <label class="checkbox checked" for="checkbox1"><input type="checkbox" name="name" id="checkbox1" checked></label>
+                            <label class="checkbox" for="checkbox1"><input type="checkbox" name="name" id="checkbox1"></label>
                         </span>
                     </li>
-                    <li class="even">
+                    <li class="active">
                         <span class="account-name"><span class="icon icon-username"></span> LOGINNAME21</span>
                         <span class="account-checkbox">
                             <label class="checkbox checked"><input type="checkbox" name="name" id="" checked></label>
@@ -124,8 +135,10 @@
                 </ul>
             </div>
             <div class="block-footer">
-                <span class="icon icon-exit"></span>
-                <a href="#" class="user-account-logout-link">Logout</a>
+                <a class="user-account-logout-link" href="#">
+                    <span class="icon icon-exit"></span>
+                    <span>Logout</span>
+                </a>
             </div>
             </div>
             <div class="block-inner-bottom"><div class="block-inner-bottom"></div></div>
@@ -159,6 +172,7 @@
                                     <span class="status-bar status-green"></span>
                                     <span class="status-bar status-yellow"></span>
                                     <span class="status-bar status-gray"></span>
+                                    <!-- <span class="status-bar status-red"></span> -->
                                 </span>
                             </li>
                         </ul>
@@ -203,19 +217,21 @@
 <script>
 var isIE7 = window.document.documentMode && window.document.documentMode <= 7 || false;
 
-if (isIE7) {
-    $(".checkbox").on("click", function() {
-        $(this).find("input").prop("checked", !$(this).hasClass("checked"));
-        $(this).toggleClass("checked");
-    });
-} else {
-    $("input:checkbox").on("change", function() {
-        $(this).closest(".checkbox").toggleClass("checked", this.checked);
-    });
-}
+$(".account-list li input").each(function() {
+    $(this).closest(".checkbox").toggleClass("checked", this.checked);
+    $(this).closest("li").toggleClass("active", this.checked);
+});
+
+$(".account-list li").on("click", function() {
+    var $checkbox = $(this).find("input");
+    $(this).toggleClass("active", !$checkbox.is(":checked"));
+    $(this).find(".checkbox").toggleClass("checked", !$checkbox.is(":checked"));
+    $(this).find("input").prop("checked", !$checkbox.is(":checked"));
+});
 
 $(".header-menu .account > a").on("click", function(e) {
     e.preventDefault();
+    $(this).closest("li").toggleClass("active");
     $(this).find(".icon-arrow").toggleClass("icon-arrow-right icon-arrow-down");
     $(".news").toggleClass("pull-right");
     $(".user-account").toggle();
@@ -227,9 +243,9 @@ $(".header-menu .account > a").on("click", function(e) {
     
     if (userAccountBlockHeight < $(".news").outerHeight()) {
         $(".user-account").addClass("height100");
-    } else {
-        $(".user-account").removeClass("height100");
     }
+
+    $(this).blur();
 });
 
 $(".language > a").on("click", function(e) {
@@ -241,31 +257,39 @@ $(".language > a").on("click", function(e) {
         }
         $(".main, .main-inner > .row").css("position", "static");
     }
-    $(this).find(".icon-arrow").toggleClass("icon-arrow-right icon-arrow-down");
-    $(".language-dropdown").toggle();
+
     var $languageActiveHtml = $("#language-selected").html();
 
-    $(".language-dropdown a").on("click", function(e) {
-        e.preventDefault();
-        var $languageSelectedHtml = $(this).html();
-        closeDropDown();
-        $("#language-selected").html($languageSelectedHtml);
-        $(this).html($languageActiveHtml);
-    });
+    $(this).find(".icon-arrow").toggleClass("icon-arrow-right icon-arrow-down");
+    
+    $(".language-dropdown").stop().slideToggle(100).delay(150);
 
-    $(document).on("click", function(e) {
-        if (!$(e.target).closest(".language").length) {
-            closeDropDown();            
-        }
-    });
+    $(".language-dropdown a").on("click", function(e) {
+            e.preventDefault();
+            closeDropDown();
+            var $languageSelectedHtml = $(this).html();
+            
+            if ($languageActiveHtml !== $languageSelectedHtml) {
+                $("#language-selected").html($languageSelectedHtml);
+                $(this).html($languageActiveHtml);                
+            }
+        });
+
+        $(document).on("click", function(e) {
+            if (!$(e.target).closest(".language").length) {
+                closeDropDown();            
+            }
+        });
 
     var closeDropDown = function() {
+        $(".language-dropdown a").off("click");
+        $(document).off("click");
+
         $(".language-dropdown").slideUp("fast");
+
         if (isIE7) {
             $(".main, .main-inner > .row").css("position", "relative");
         }
-        $(document).off("click");
-        $(".language-dropdown a").off("click");
     }
 });
 
@@ -283,15 +307,26 @@ $(".news .block-header").on("click", function(e) {
 
             if (userAccountHeight < $(".news").outerHeight()) {
                 $(".user-account").addClass("height100");
-            } else {
-                $(".user-account").removeClass("height100");
             }
         });
     } else {
         $(this).closest(".block").find(".block-body").slideUp(300);
-        $(".user-account").removeClass("height100");
     }
 });
+
+if (isIE7) {
+    $(".user-account .block-footer").hover(function () {
+        $(this).closest(".block").find(".block-inner-bottom").addClass("active");
+    }, function () {
+        $(this).closest(".block").find(".block-inner-bottom").removeClass("active");
+    })
+} else {
+    $(".user-account .block-footer").hover(function () {
+        $(this).closest(".block").find(".block-inner-bottom").hide();
+    }, function () {
+        $(this).closest(".block").find(".block-inner-bottom").show();
+    })
+}
 
 $("#settings").on("click", function() {
     $(".main, .bottom, .auth").toggle();
